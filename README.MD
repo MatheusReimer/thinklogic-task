@@ -32,7 +32,7 @@ A collection of [Postman](https://www.postman.com/download) was created during t
 
 The collection is in the following JSON:
 
-Get [here](./CalendarThinkLogicAssignment.postman_collection.json)
+Get [here](./CalendarWebApp/CalendarThinkLogicAssignment.postman_collection.json)
 
 # Missing
 
