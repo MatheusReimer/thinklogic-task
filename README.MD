@@ -37,10 +37,9 @@ Get [here](./CalendarWebApp/CalendarThinkLogicAssignment.postman_collection.json
 # Missing
 
 There are a few things that should be done on the nexts steps as:
- - Frontend testing
- - Frontend routing exceptions
+ - Frontend routing exceptions and form validation
  - Backend testing
- - Frontend form validation
+
  # To run
 
 - ng serve for the frontend server/folder
