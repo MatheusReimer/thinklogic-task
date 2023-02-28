@@ -1,0 +1,63 @@
+<div class="container mt-5">
+<div style="text-align: center;">
+    <h1>Your Calendar</h1>
+</div>  
+<div class="text-center">
+  <button class="btn btn-primary btn-lg me-2 mt-2 mb-2" routerLink="/register">Add Event</button>
+</div>
+<div class="container mt-4">
+  <div style="text-align: center;">
+    <h1><b>{{this.currentMonthLong}} / {{this.currentYear}}</b></h1>
+      <table class="table table-dark table-hover table-sm table-bordered" *ngIf="!isEditing">
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Events</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let a of numberOfDaysMonth; let index = index" >
+                <td *ngIf="!compareDays(index)" style="cursor:pointer">{{index+1}} </td>
+                <td *ngIf="!compareDays(index)" style="cursor:pointer">You have {{this.compareDaysOfEvents(index)}} events on this day</td> 
+                <td class="bg-primary" style="cursor:pointer" *ngIf="compareDays(index)"><b>{{index+1}}</b></td>
+                <td class="bg-primary" style="cursor:pointer" *ngIf="compareDays(index)"><i>You have {{this.compareDaysOfEvents(index)}} events on this day</i></td>
+                <td (click)="this.editEvent(index+1)" class="table-success" style="cursor: pointer;" *ngIf="this.compareDaysOfEvents(index)>0">Edit</td>
+            </tr>
+          </tbody>
+      </table>
+
+
+      <div *ngIf="isEditing">
+      <table class="table" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Location</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let event of eventsOfSelectedDay" >
+                <th scope="row">{{event.id}}</th>
+                <td>{{event.startDate}}</td>
+                <td>{{event.endDate}}</td>
+                <td>{{event.title}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.location}}</td>
+                <td class="table-success" style="cursor: pointer;" routerLink="/calendar/{{event.id}}">Edit</td>
+                <td class="table-danger" style="cursor: pointer;" (click)="deleteEvent(event.id)">Delete</td>
+              </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger btn-lg me-2 mt-2 mb-2" (click)="cancelEdit()">Cancel</button>
+  </div> 
+
+ 
+
+</div>

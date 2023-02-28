@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "9d00f0f6-fbd5-4551-92f5-9747226fd493",
+		"name": "CalendarThinkLogicAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24109133"
+	},
+	"item": [
+		{
+			"name": "Get Calendar Events",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Calendar Event By ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Register New Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\":\"2050-01-06T17:16:40\",\r\n    \"endDate\":\"2050-01-06T17:16:40\",\r\n    \"title\":\"Testing with Postman 3\",\r\n    \"description\":\"Default description\",\r\n    \"location\":\"Remote\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/calendarevents/register",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"calendarevents",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"startDate\":\"2050-01-06T17:16:40\",\r\n    \"endDate\":\"2050-01-06T17:16:40\",\r\n    \"title\":\"Testing with Postman 4\",\r\n    \"description\":\"Default description\",\r\n    \"location\":\"Remote\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/calendarevents/delete",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"calendarevents",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 3,\r\n        \"startDate\": \"2050-01-06T17:16:40\",\r\n        \"endDate\": \"2055-01-06T17:16:40\",\r\n        \"title\": \"Updated Title\",\r\n        \"description\": \"Default description\",\r\n        \"location\": \"California\",\r\n        \"createdAt\": \"2023-02-25T19:02:13.4119921\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/calendarevents/update",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"calendarevents",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Month",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Day/Month/Year",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

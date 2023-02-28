@@ -1,0 +1,54 @@
+<body class="bg-light">
+    
+    <div class="container">
+      <main>
+        <div class="py-5 text-center">
+          <img class="d-block mx-auto mb-4" src="../../favicon.ico" alt="" width="55" height="55">
+          <h2>Calendar Form</h2>
+          <p class="lead">Add your events below!</p>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class=" col-6">           
+            <form #registerForm="ngForm" class="needs-validation" novalidate="" (ngSubmit)="updateCalendar()">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required="true" [value]="calendar.title" [(ngModel)]="calendar.title"  name="title">
+                  <div class="invalid-feedback">
+                    Valid title is required.
+                  </div>
+                </div> 
+                <div class="col-12">
+                  <label for="lastName" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="description" placeholder=""  [value]="calendar.description"  name="description" [(ngModel)]="calendar.description">
+                </div>
+                <div class="col-12">
+                  <label for="location" class="form-label">Location</label>
+                  <input type="text" class="form-control" id="location" placeholder="California"  [value]="calendar.location"  name="location" [(ngModel)]="calendar.location">
+                </div>
+                <div class="col-12">
+                    <label for="startDate" class="form-label">Initial time</label>
+                    <input type="datetime-local" class="form-control" id="startDate" [(ngModel)]="calendar.startDate"  [value]="calendar.startDate"  name="startDate">
+                </div>
+                <div class="col-12">
+                    <label for="endDate" class="form-label">End time</label>
+                    <input type="datetime-local" class="form-control" id="endDate"[(ngModel)]="calendar.endDate"  [value]="calendar.endDate" name="endDate" >
+                </div>
+
+              </div> 
+              <hr class=" mt-4"> 
+           
+                <div class="row justify-content-center">
+                    <div class="col-md-4">                     
+                       <button class="w-75 btn btn-danger btn-lg" routerLink="/"> Cancel </button>
+                    </div>
+                    <div class="col-md-4">
+                      <button class="w-75 btn btn-primary btn-lg" type="submit">Update</button> </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </main>
+
+    </div>
+    </body>
