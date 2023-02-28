@@ -22,7 +22,7 @@ The project goal is to fulfil the requiremnt of an assessment provided by Thinkl
 
 - Database Mysqlite
 - User interface that can (Create, Read, Update, Delete)
-- AspNet Core as backend
+- .NET Core as backend
 - Angular JS as frontend
 - Frameworks as Bootstrap and Fontawesome 
 
